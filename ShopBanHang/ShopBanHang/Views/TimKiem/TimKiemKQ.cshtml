@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ShopBanHang.Models.SanPham>
+
+@{
+    ViewBag.Title = "TimKiemKQ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TimKiemKQ</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.loaiSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.slTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngayCapNhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hang.tenHang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.loaiSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.slTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayCapNhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hang.tenHang)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.maSP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.maSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.maSP })
+        </td>
+    </tr>
+}
+
+</table>
